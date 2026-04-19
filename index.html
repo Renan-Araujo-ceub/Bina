@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BINA DAY! 🎂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .font-huge { font-family: 'Unbounded', sans-serif; font-weight: 900; }
+        
+        .bg-neon-pink { background-color: #ff0055; }
+        .text-neon-pink { color: #ff0055; }
+        
+        .sticker {
+            transform: rotate(var(--r));
+            transition: all 0.3s ease;
+        }
+        .sticker:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 50;
+        }
+
+        .scroll-text {
+            white-space: nowrap;
+            animation: scroll 20s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .time-box {
+            background: #111;
+            border-bottom: 4px solid #ff0055;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 100px;
+            border-radius: 8px;
+        }
+
+        .pink-number {
+            color: #ff0055;
+        }
+
+        /* Ajuste para mobile */
+        @media (max-width: 640px) {
+            .time-box {
+                padding: 1rem;
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE TOPO -->
+    <div class="fixed top-0 w-full bg-neon-pink text-black py-2 z-50 overflow-hidden border-b-2 border-white">
+        <div class="scroll-text flex font-huge text-sm uppercase">
+            <span>HAPPY BIRTHDAY BINA • O TEU DIA CHEGOU • 20 DE ABRIL • PARABÉNS BINA • FELIZ ANIVERSÁRIO • &nbsp;</span>
+            <span>HAPPY BIRTHDAY BINA • O TEU DIA CHEGOU • 20 DE ABRIL • PARABÉNS BINA • FELIZ ANIVERSÁRIO • &nbsp;</span>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-[70vh] flex flex-col items-center justify-center pt-24 px-4 text-center">
+        <h1 class="font-huge text-7xl md:text-9xl uppercase leading-none mb-4">
+            BINA<span class="text-neon-pink">.</span>
+        </h1>
+        <p class="text-zinc-400 text-lg md:text-xl uppercase tracking-[0.3em]">Onde a nossa história ganha vida</p>
+    </section>
+
+    <!-- CONTADOR -->
+    <section class="py-20 bg-white text-black text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-huge text-3xl md:text-5xl mb-4 uppercase tracking-tighter">O tempo para quando estou contigo</h2>
+            <p class="text-zinc-500 mb-12 uppercase text-sm tracking-widest">Desde aquele 20 de Abril de 2025</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="time-box">
+                    <span id="anos" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Anos</span>
+                </div>
+                <div class="time-box">
+                    <span id="meses" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Meses</span>
+                </div>
+                <div class="time-box">
+                    <span id="dias" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Dias</span>
+                </div>
+                <div class="time-box">
+                    <span id="horas" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Horas</span>
+                </div>
+                <div class="time-box">
+                    <span id="minutos" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Minutos</span>
+                </div>
+                <div class="time-box">
+                    <span id="segundos" class="font-huge text-4xl md:text-5xl block pink-number">00</span>
+                    <span class="text-[10px] font-bold uppercase text-zinc-500">Segundos</span>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-2xl mx-auto text-center">
+                <p class="text-lg italic leading-relaxed text-zinc-700">
+                    "Cada segundo ao teu lado não é apenas tempo passando, é a construção de algo que eu nunca imaginei encontrar. Obrigado por ser minha melhor pessoa."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARTA / MENSAGEM -->
+    <section class="py-32 px-6 bg-black">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-zinc-900 border-2 border-zinc-700 p-8 md:p-16 relative">
+                <div class="absolute top-0 right-10 bg-neon-pink text-white px-6 py-2 font-huge -translate-y-1/2">DE: EU / PARA: BINA</div>
+                <div class="space-y-6 text-xl md:text-2xl font-light leading-relaxed">
+                    <p>Hoje é o teu dia, <span class="font-bold text-neon-pink uppercase">Bina</span>…</p>
+                    <p>E eu queria conseguir colocar em palavras tudo o que mereces, mas a verdade é que é difícil. És muito especial para mim, de um jeito que vai além de qualquer texto.</p>
+                    <p>Fico a pensar em tudo o que já me disseste sobre mim… que sou carinhoso, legal, importante para ti, que te trago segurança… e, sinceramente, isso significa muito para mim. Porque vindo de ti, tem um peso diferente. Faz-me querer ser ainda melhor, estar mais presente e cuidar de ti do jeito que mereces.</p>
+                    <p class="border-l-4 border-neon-pink pl-6 py-4 italic text-zinc-400">
+                        Mas hoje não é sobre mim, é sobre ti. Sobre a pessoa incrível que és, sobre o jeito que iluminas tudo, sobre como consegues ser tão única. Eu admiro muito quem tu és, de verdade.
+                    </p>
+                    <p>Só quero que este novo ciclo te traga paz, felicidade de verdade, conquistas e muitos momentos bons. E que nunca esqueças o quanto és importante.</p>
+                </div>
+                <div class="mt-12 flex flex-col md:flex-row items-center gap-6">
+                    <span class="font-huge text-3xl uppercase italic">Love you</span>
+                    <button onclick="festa()" class="bg-white text-black font-huge px-8 py-4 hover:bg-neon-pink hover:text-white transition-all uppercase text-sm border-2 border-transparent hover:border-white">
+                        Lançar Confetes! 🎉
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOTO ÚNICA -->
+    <section class="py-20 bg-zinc-100 text-black overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="font-huge text-5xl mb-20 uppercase tracking-tighter italic">Nós</h2>
+            
+            <div class="flex justify-center">
+                <div class="sticker bg-white p-4 shadow-2xl border border-zinc-200" style="--r: -2deg">
+                    <img src="https://i.postimg.cc/tZX2ZkBY/image.jpg" class="w-72 md:w-80 h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Nossa Foto">
+                    <p class="mt-4 font-bold uppercase text-center text-[10px] tracking-widest italic">Onde tudo faz sentido</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="py-20 text-center border-t border-zinc-800 bg-black">
+        <p class="font-huge text-xl md:text-4xl text-zinc-500 uppercase">20 / 04 / 2025 — <span class="text-white">∞</span></p>
+    </footer>
+
+    <script>
+        const dataInicio = new Date(2025, 3, 20, 0, 0, 0);
+
+        function update() {
+            const agora = new Date();
+            
+            let anos = agora.getFullYear() - dataInicio.getFullYear();
+            let meses = agora.getMonth() - dataInicio.getMonth();
+            let dias = agora.getDate() - dataInicio.getDate();
+
+            if (dias < 0) {
+                meses--;
+                let ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+                dias += ultimoMes.getDate();
+            }
+            if (meses < 0) {
+                anos--;
+                meses += 12;
+            }
+
+            const horas = agora.getHours();
+            const minutos = agora.getMinutes();
+            const segundos = agora.getSeconds();
+
+            document.getElementById('anos').innerText = (anos < 0 ? 0 : anos).toString().padStart(2, '0');
+            document.getElementById('meses').innerText = (meses < 0 ? 0 : meses).toString().padStart(2, '0');
+            document.getElementById('dias').innerText = (dias < 0 ? 0 : dias).toString().padStart(2, '0');
+            document.getElementById('horas').innerText = horas.toString().padStart(2, '0');
+            document.getElementById('minutos').innerText = minutos.toString().padStart(2, '0');
+            document.getElementById('segundos').innerText = segundos.toString().padStart(2, '0');
+        }
+
+        setInterval(update, 1000);
+        window.onload = update;
+
+        function festa() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#ff0055', '#ffffff', '#ffd700']
+            });
+        }
+    </script>
+</body>
+</html>
